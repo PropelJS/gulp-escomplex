@@ -4,15 +4,12 @@ var gutil = require('gulp-util');
 var escomplex = require('escomplex');
 var esprima = require('esprima');
 var walker = require('escomplex-ast-moz');
+var fs = require('fs');
+
 var PluginError = gutil.PluginError;
 
 // Consts
 const PLUGIN_NAME = 'gulp-escomplex';
-
-function prefixStream() {
-  var stream = through();
-  return stream;
-}
 
 function getSyntaxTree(source) {
   return esprima.parse(source, {
@@ -29,7 +26,16 @@ function analyseSource(source, options) {
 }
 
 // Plugin level function(dealing with files)
-function gulpESComplex() {
+function gulpESComplex(options) {
+  // setup defaults
+  options = options || { };
+  options.complexity = options.complexity || { };
+  options.complexity.newmi = (
+    (options.complexity.newmi !== undefined && !options.complexity.newmi !== false) ?
+    options.complexity.newmi : true
+  );
+
+  options.outDirectory = options.outDirectory || 'complexity';
 
   // Creating a stream through which each file will pass
   var stream = through.obj(function(file, enc, callback) {
@@ -41,10 +47,10 @@ function gulpESComplex() {
     }
 
     if (file.isStream()) {
-      file.contents = file.contents.pipe(prefixStream());
+      file.contents = file.contents.pipe(through());
     }
 
-    console.log(analyseSource(file.contents.toString('utf-8'), {}));
+    console.log(analyseSource(file.contents.toString('utf-8'), options.complexity));
     console.log(file.path, file.cwd, file.path.split(file.cwd)[1]);
     this.push(file);
     return callback();
