@@ -1,0 +1,28 @@
+{
+  "name": "gulp-escomplex",
+  "version": "0.0.0",
+  "description": "Code complexity module for Gulp using escomplex",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulpplugin",
+    "gulp",
+    "complexity",
+    "escomplex",
+    "complex"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "through2": "^0.5.1",
+    "gulp-util": "^2.2.20",
+    "escomplex": "^0.2.3",
+    "escomplex-ast-moz": "^0.1.5",
+    "esprima": "^1.2.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.6"
+  }
+}
