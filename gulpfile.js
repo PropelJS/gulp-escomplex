@@ -3,7 +3,9 @@ var complexity = require('./index');
 
 gulp.task('complexity', function () {
   return gulp.src([
-    'index.js'
+    'index.js',
+    'gulpfile.js'
   ])
-  .pipe(complexity());
+  .pipe(complexity())
+  .pipe(gulp.dest('./complexity'));
 });
