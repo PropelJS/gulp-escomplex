@@ -51,7 +51,7 @@ function gulpESComplex (options) {
     }
 
     var analysis = analyseSource(file.contents.toString('utf-8'), options.complexity);
-    file.contents = new Buffer(JSON.stringify(analysis));
+    file.analysis = new Buffer(json.render(null, analysis));
 
     this.push(file);
 

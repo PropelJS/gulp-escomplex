@@ -6,6 +6,5 @@ gulp.task('complexity', function () {
     'index.js',
     'gulpfile.js'
   ])
-  .pipe(complexity())
-  .pipe(gulp.dest('./complexity'));
+  .pipe(complexity());
 });
