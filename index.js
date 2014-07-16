@@ -45,7 +45,7 @@ function gulpESComplex (options) {
     }
 
     if (file.isStream()) {
-      file.contents = file.contents.pipe(through());
+      return callback(new PluginError(PLUGIN_NAME, 'Streaming not supported'));
     }
 
     var analysis = analyseSource(file.contents.toString('utf-8'), options.complexity);
