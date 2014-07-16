@@ -4,7 +4,7 @@
   "description": "Code complexity module for Gulp using escomplex",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/complexity.js"
   },
   "keywords": [
     "gulpplugin",
@@ -23,6 +23,8 @@
     "esprima": "^1.2.2"
   },
   "devDependencies": {
-    "gulp": "^3.8.6"
+    "gulp": "^3.8.6",
+    "vinyl": "^0.2.3",
+    "tape": "^2.13.3"
   }
 }
