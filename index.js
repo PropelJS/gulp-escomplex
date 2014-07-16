@@ -37,19 +37,15 @@ function gulpESComplex (options) {
 
   // Creating a stream through which each file will pass
   var stream = through.obj(function(file, enc, callback) {
-    if (file.isNull()) {
-      // Do nothing if no contents
-    }
-    if (file.isBuffer()) {
-      file.contents = file.contents;
-    }
-
     if (file.isStream()) {
       return callback(new PluginError(PLUGIN_NAME, 'Streaming not supported'));
     }
 
-    var analysis = analyseSource(file.contents.toString('utf-8'), options.complexity);
-    file.analysis = new Buffer(JSON.stringify(analysis));
+    if (!file.isNull()) {
+      var analysis = analyseSource(file.contents.toString('utf-8'), options.complexity);
+      file.analysis = new Buffer(JSON.stringify(analysis));
+    }
+
 
     this.push(file);
 
