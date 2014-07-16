@@ -4,8 +4,6 @@ var escomplex = require('escomplex');
 var esprima = require('esprima');
 var walker = require('escomplex-ast-moz');
 
-var json = require('./lib/json');
-
 var PluginError = gutil.PluginError;
 
 // Consts
@@ -51,7 +49,7 @@ function gulpESComplex (options) {
     }
 
     var analysis = analyseSource(file.contents.toString('utf-8'), options.complexity);
-    file.analysis = new Buffer(json.render(null, analysis));
+    file.analysis = new Buffer(JSON.stringify(analysis));
 
     this.push(file);
 
