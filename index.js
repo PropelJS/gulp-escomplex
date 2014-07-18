@@ -51,11 +51,11 @@ function gulpESComplex (options) {
       };
 
       if (options.packageName) {
-        analysis.packageName = options.packageName;
+        analysis.meta.packageName = options.packageName;
       }
 
       if (options.packageVersion) {
-        analysis.packageVersion = options.packageVersion;
+        analysis.meta.packageVersion = options.packageVersion;
       }
 
       file.analysis = new Buffer(JSON.stringify(analysis));
