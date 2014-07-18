@@ -20,6 +20,9 @@ gulp.task('complexity', function () {
     'index.js',
     'gulpfile.js'
   ])
-  .pipe(complexity());
+  .pipe(complexity({
+    packageName: 'gulp-escomplex',
+    packageVersion: '1.0.1beta4'
+  }));
 });
 ```
