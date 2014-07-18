@@ -46,9 +46,17 @@ function gulpESComplex (options) {
     if (!file.isNull()) {
       var analysis = analyseSource(file.contents.toString('utf-8'), options.complexity);
       analysis.meta = {
-        reporter: pack.name,
-        version: pack.version
+        analysis: pack.name,
+        analysisVersion: pack.version
       };
+
+      if (options.packageName) {
+        analysis.packageName = options.packageName;
+      }
+
+      if (options.packageVersion) {
+        analysis.packageVersion = options.packageVersion;
+      }
 
       file.analysis = new Buffer(JSON.stringify(analysis));
     }
