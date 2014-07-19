@@ -4,6 +4,8 @@ var escomplex = require('escomplex');
 var esprima = require('esprima');
 var walker = require('escomplex-ast-moz');
 
+var pack = require('./package.json');
+
 var PluginError = gutil.PluginError;
 
 // Consts
@@ -43,6 +45,19 @@ function gulpESComplex (options) {
 
     if (!file.isNull()) {
       var analysis = analyseSource(file.contents.toString('utf-8'), options.complexity);
+      analysis.meta = {
+        analysis: pack.name,
+        analysisVersion: pack.version
+      };
+
+      if (options.packageName) {
+        analysis.meta.packageName = options.packageName;
+      }
+
+      if (options.packageVersion) {
+        analysis.meta.packageVersion = options.packageVersion;
+      }
+
       file.analysis = new Buffer(JSON.stringify(analysis));
     }
 
