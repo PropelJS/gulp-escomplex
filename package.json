@@ -1,6 +1,6 @@
 {
   "name": "gulp-escomplex",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Code complexity module for Gulp using escomplex",
   "main": "index.js",
   "scripts": {
@@ -26,5 +26,12 @@
     "gulp": "^3.8.6",
     "vinyl": "^0.2.3",
     "tape": "^2.13.3"
+  },
+  "bugs": {
+    "url": "https://github.com/JerrySievert/gulp-escomplex/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JerrySievert/gulp-escomplex.git"
   }
 }
