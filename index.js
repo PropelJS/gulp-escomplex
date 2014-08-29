@@ -58,6 +58,8 @@ function gulpESComplex (options) {
         analysis.meta.packageVersion = options.packageVersion;
       }
 
+      analysis.meta.fileName = file.relative;
+
       file.analysis = new Buffer(JSON.stringify(analysis));
     }
 

@@ -12,7 +12,7 @@ var testFile = new vinyl({
 });
 
 test('should run complexity on files', function (t) {
-  t.plan(7);
+  t.plan(8);
 
   var stream = complex();
   stream.on('data', function (newFile) {
@@ -26,6 +26,7 @@ test('should run complexity on files', function (t) {
     var analysis = JSON.parse(newFile.analysis.toString('utf8'));
 
     t.ok(analysis.aggregate, 'analysis should have an aggregate');
+    t.equal(analysis.meta.fileName, 'file.js', 'fileName should be correct');
   });
 
   stream.write(testFile);
