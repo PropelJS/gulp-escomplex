@@ -18,9 +18,7 @@
   "dependencies": {
     "through2": "^0.5.1",
     "gulp-util": "^2.2.20",
-    "escomplex": "^0.2.3",
-    "escomplex-ast-moz": "^0.1.5",
-    "esprima": "^1.2.2"
+    "escomplex-js": "https://npm.fury.io/GTpAPYjxGn3jnpGRdN3L/thotjs/escomplex-js/-/latest.tgz"
   },
   "devDependencies": {
     "gulp": "^3.8.6",

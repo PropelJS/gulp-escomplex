@@ -1,8 +1,8 @@
+'use strict';
+
 var through = require('through2');
 var gutil = require('gulp-util');
-var escomplex = require('escomplex');
-var esprima = require('esprima');
-var walker = require('escomplex-ast-moz');
+var escomplex = require('escomplex-js');
 
 var pack = require('./package.json');
 
@@ -11,18 +11,8 @@ var PluginError = gutil.PluginError;
 // Consts
 const PLUGIN_NAME = 'gulp-escomplex';
 
-function getSyntaxTree (source) {
-  return esprima.parse(source, {
-    loc: true
-  });
-}
-
-function performAnalysis (ast, options) {
-  return escomplex.analyse(ast, walker, options);
-}
-
 function analyseSource (source, options) {
-  return performAnalysis(getSyntaxTree(source), options);
+  return escomplex.analyse(source, options);
 }
 
 // Plugin level function(dealing with files)
