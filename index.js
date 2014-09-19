@@ -1,5 +1,3 @@
-'use strict';
-
 var through = require('through2');
 var gutil = require('gulp-util');
 var escomplex = require('escomplex-js');

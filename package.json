@@ -1,6 +1,6 @@
 {
   "name": "gulp-escomplex",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Code complexity module for Gulp using escomplex",
   "main": "index.js",
   "scripts": {
