@@ -2,7 +2,7 @@
 
 This module does static analysis of source files and prepares them for a `reporter`.
 
-See also: [gulp-escomplex-reporter-json](https://github.com/JerrySievert/gulp-escomplex-reporter-json)
+See also: [gulp-escomplex-reporter-html](https://github.com/JerrySievert/gulp-escomplex-reporter-html) and [gulp-escomplex-reporter-json](https://github.com/JerrySievert/gulp-escomplex-reporter-json)
 
 It uses `escomplex` to do the heavy lifting.
 
