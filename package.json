@@ -16,9 +16,9 @@
   "author": "Jerry Sievert <code@legitimatesounding.com> (http://legitimatesounding.com/blog/)",
   "license": "MIT",
   "dependencies": {
-    "through2": "^0.5.1",
+    "escomplex-js": "git://github.com/PropelJS/escomplex-js",
     "gulp-util": "^2.2.20",
-    "escomplex-js": "https://npm.fury.io/GTpAPYjxGn3jnpGRdN3L/thotjs/escomplex-js/-/latest.tgz"
+    "through2": "^0.5.1"
   },
   "devDependencies": {
     "gulp": "^3.8.6",
